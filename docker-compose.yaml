@@ -1,0 +1,18 @@
+services:
+  api:
+    image: registry.digitalocean.com/johngibb:${DATE_TAG}-${GIT_SHA}
+    build:
+      context: .
+      args:
+        DATE_TAG: ${DATE_TAG}
+        GIT_SHA: ${GIT_SHA}
+    environment:
+      - GO_ENV=production
+    ports:
+      - "8080:8080"
+    networks:
+      - frontend
+    restart: always
+networks:
+  frontend:
+    driver: overlay
