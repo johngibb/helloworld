@@ -1,6 +1,6 @@
 services:
   api:
-    image: registry.digitalocean.com/johngibb:${DATE_TAG}-${GIT_SHA}
+    image: registry.digitalocean.com/sincerelyus/helloworld:${DATE_TAG}-${GIT_SHA}
     build:
       context: .
       args:
